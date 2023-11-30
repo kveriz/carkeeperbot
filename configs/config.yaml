@@ -1,0 +1,14 @@
+name: "Хххранитель машины BOT"
+description: "Send and get stats about expenses on your car"
+version: 0.0.1
+token: INSERT_YOUR_TOKEN_HERE 
+lang: RU
+sql:
+  driver: postgres
+  user: postgres
+  password: password
+  host: localhost:5432
+  database: carkeeperbot
+  # TODO make this optional
+  mode: disable
+  sqlitePath: ""
