@@ -1,0 +1,20 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: ./build/bot/Dockerfile
+    depends_on:
+      - postgres
+    volumes:
+      - /Users/kverizhnikov/carkeeperbot/configs/config.yaml:/config.yaml
+    environment:
+      - DB_MIGRATE=true
+  db:
+    image: "postgres:14"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=carkeeperbot
+  
+
+# extra_hosts:
+#       - "host.docker.internal:host-gateway"

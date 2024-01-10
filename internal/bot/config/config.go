@@ -14,7 +14,7 @@ type Config struct {
 	Token       string `yaml:"token"`
 	Lang        string `yaml:"lang"`
 	SQL         struct {
-		DBType     string `yaml:"driver"`
+		DBDriver   string `yaml:"driver"`
 		DBUser     string `yaml:"user"`
 		DBPassword string `yaml:"password"`
 		DBHost     string `yaml:"host"`

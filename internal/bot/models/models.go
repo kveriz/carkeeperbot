@@ -43,6 +43,10 @@ Use /help to get more info about them
 			"RU": "неверный форма даты",
 			"EN": "wrong date format",
 		},
+		"date_comparasion": {
+			"RU": "неверный порядок дат",
+			"EN": "wrong date sequence",
+		},
 		"float_parse_error": {
 			"RU": "неверный формат суммы",
 			"EN": "wrong type of cost",

@@ -105,5 +105,13 @@ func (t *TgBot) parseListInput(s string) (from, to time.Time, err error) {
 		return from, to, err
 	}
 
+	if !inTimeSpan(from, to) {
+		err = errors.New(models.Messages["date_comparasion"][t.config.Lang])
+		return from, to, err
+	}
 	return from, to, err
+}
+
+func inTimeSpan(start, end time.Time) bool {
+	return end.After(start) && start.Before(end)
 }

@@ -25,6 +25,11 @@ func main() {
 	storage := db.New(*config)
 	defer storage.Close()
 
+	_, ok := os.LookupEnv("DB_MIGRATE")
+	if ok {
+		storage.DoMigrate("/migrations")
+	}
+
 	tgBot := bot.NewTgBot(*config, storage)
 
 	go tgBot.Serve(ctx)
